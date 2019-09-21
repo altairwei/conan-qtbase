@@ -4,6 +4,17 @@ import sys
 
 from conans import ConanFile, tools
 from conans.errors import ConanInvalidConfiguration
+from conans.model import Generator
+
+class qt(Generator):
+    @property
+    def filename(self):
+        return "qt.conf"
+
+    @property
+    def content(self):
+        #TODO: Create a toplevel "conan-qt" recipe to collect all submodules.
+        return "[Paths]\nPrefix = %s\n" % self.conanfile.deps_cpp_info["qtbase"].rootpath.replace("\\", "/")
 
 class QtBaseConan(ConanFile):
     name = "qtbase"
