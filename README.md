@@ -1,0 +1,1 @@
+This conan recipe mainly refer to [bincrafters/conan-qt](https://github.com/bincrafters/conan-qt) . It's an attempt to separate Qt project into a series of conan packages according to Qt's submodules.
